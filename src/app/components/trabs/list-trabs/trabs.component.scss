@@ -1,0 +1,105 @@
+.dataWorks {
+    padding: 30px 30px 30px 30px;
+}
+
+.AutoComplete {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    margin-top: 2rem;
+
+    display: flex;
+    flex-direction: column;
+
+
+
+    .FormAutoCompleted {
+
+        .AutoCompleteInput {
+
+            width: 100%;
+        }
+    }
+}
+
+.DivAutoComplete {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+
+.paginator {
+    display: flex;
+
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    margin-top: 2rem;
+    border-radius: 7px
+}
+
+
+a {
+    text-decoration: none;
+    transition: filter 0.4s;
+
+    &:hover {
+        filter: brightness(0.9);
+    }
+
+}
+
+
+.work-card {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    margin-top: 2rem;
+    min-height: 200px !important;
+
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+
+    .title {
+        display: flex;
+        margin-top: 2rem;
+        align-items: center;
+
+        div {
+            margin-left: auto;
+
+            display: flex;
+            align-items: center;
+
+            h3 {
+                margin-right: auto;
+            }
+        }
+
+        .materia {
+            h3 {
+                img {
+                    width: 1.5rem;
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+h3 {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+h4 {
+    font-weight: 700;
+}
+
+p {
+    font-size: 80%;
+}

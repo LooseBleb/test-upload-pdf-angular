@@ -1,0 +1,12 @@
+<header class="headerContainer">
+  <div class="headerContent">
+    <img src="../assets/work-in-progress.png" alt="Logo">
+    <nav>
+      <a href="/"  [class.active]="url == '/'" >Home</a>
+      <a href="/works" [class.active]="workExist(url)">Works</a>
+    </nav>
+    <button (click)="ShowDialog()">New Work</button>
+  </div>
+</header>
+
+<router-outlet></router-outlet>

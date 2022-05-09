@@ -1,0 +1,109 @@
+.headerContainer {
+    height: 5rem;
+    border-bottom: 1px solid black;
+    background: var(--background);
+
+    .headerContent {
+        max-width: 1120px;
+        height: 5rem;
+        margin: 0 auto;
+        padding: 0 2rem;
+
+        display: flex;
+        align-items: center;
+
+
+        img {
+            width: 4rem;
+        }
+
+        button {
+            margin-left: auto;
+            border: 0;
+            width: 8rem;
+            height: 2rem;
+            background: var(--yellow);
+            border-radius: 8px;
+            font-weight: bold;
+            transition: filter 0.3s;
+
+            &:hover {
+                filter: brightness(0.7);
+            }
+        }
+
+        nav {
+            margin-left: 5rem;
+            height: 5rem;
+            display: flex;
+            align-items: center;
+
+            a {
+                text-decoration: none;
+                display: inline-block;
+                margin-left: 2rem;
+                height: 5rem;
+                line-height: 5rem;
+                position: relative;
+                color: var(--text-body);
+                transition: filter 0.3s;
+
+                &+a {
+                    margin-left: 2rem;
+                }
+
+                &:hover {
+                    filter: brightness(0.7);
+                }
+            }
+
+            .active {
+                font-weight: bold;
+
+
+                &::after {
+                    content: '';
+                    width: 100%;
+                    height: 3px;
+                    border-radius: 3px 3px 0 0;
+                    position: absolute;
+                    bottom: 1px;
+                    left: 0;
+                    background-color: var(--yellow);
+
+                }
+
+            }
+
+        }
+    }
+}
+
+
+// DIALOG
+
+
+form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 20rem;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+label {
+    padding: 10px 10px;
+    width: 13rem;
+    background-color: var(--background);
+    color: #FFF;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    margin-top: 2px;
+    cursor: pointer;
+    margin-bottom: 3rem;
+}

@@ -1,0 +1,51 @@
+<div *ngIf="!works">
+    <mat-progress-bar mode="buffer"></mat-progress-bar>
+</div>
+
+<div class="dataWorks">
+    <div class="content">
+        <mat-grid-list cols="1" rowHeight="50px">
+            <mat-grid-tile>
+                <h2 class="title">Trabalhos registrados</h2>
+            </mat-grid-tile>
+        </mat-grid-list>
+
+        <div class="AutoComplete">
+            <form class="FormAutoCompleted">
+                <mat-form-field class="AutoCompleteInput">
+                    <input type="text" id="input" placeholder="Search work with name" matInput [formControl]="autoCompleteInput"
+                        [matAutocomplete]="auto">
+                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                        <mat-option *ngFor="let name of NamesWorks | async" [value]="name">{{ name }}</mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+            </form>
+        </div>
+        <ng-container *ngFor="let work of pagedList">
+            <a [routerLink]="['/works/', work.id]">
+                <mat-card class="work-card">
+                    <mat-card-header class="title">
+                        <div>
+                            <h3>Title: {{ work.name }}</h3>
+                        </div>
+                        <div class="materia">
+                            <h3>Matter: {{ work.matter.name }} <img [src]="work.matter.icon"  alt=""></h3>
+                        </div>
+                    </mat-card-header>
+                    <h4>Description</h4>
+                    <mat-card-content>
+                        <span>{{ work.description | slice: 0:190 }} ...</span>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <!-- <button mat-raised-button color="accent" (click)="addItemToCard(product)">Add to card</button> -->
+                    </mat-card-actions>
+                </mat-card>
+            </a>
+        </ng-container>
+
+        <mat-paginator class="paginator" #paginator [length]="length" [pageSize]="5"
+            [pageSizeOptions]="[5, 10, 25, 100]" [showFirstLastButtons]="true"
+            (page)="pageEvent = $event; onPaginateChange($event)">
+        </mat-paginator>
+    </div>
+</div>
